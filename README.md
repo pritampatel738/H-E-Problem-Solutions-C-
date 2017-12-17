@@ -1,0 +1,3 @@
+# HackerEarth
+Solution of well known problems on hackerearth in extremely simplified manner....
+
