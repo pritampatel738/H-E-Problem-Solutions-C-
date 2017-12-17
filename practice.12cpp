@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main(){
+
+	int n,s;
+	cin>>n>>s;
+	int arr[n];
+	for(int i=0;i<n;i++){
+			arr[i]=i;
+			cout<<i<<" "<<arr[i]<<endl;
+		}
+	int ar[n];
+	ar[0]=arr[0];
+	for(int i=1;i<n;i++){
+		ar[i]=arr[i]+ar[i-1];
+		cout<<i<<" "<<ar[i]<<endl;
+	}
+	while(s--){
+			long long a=0;
+			int l,r;
+			cin>>l>>r;
+			if(l==r){
+					a=0;
+					if(l-1>=0)
+						a+=arr[l-1];
+					if(r+1>=n-1)
+						a+=arr[r+1];
+					cout<<a<<endl;
+				}
+			else{
+			a=ar[r]-ar[l]+arr[l];
+			if(l-1>=0)
+				a+=arr[l-1];
+			if(r+1>=n-1)
+				a+=arr[r+1];
+			cout<<a<<endl;
+		}
+		}
+	
+return 0;
+}
+
+/*10 3
+2 4
+6 7
+9 9
+
+Sample Output 0
+
+15
+21
+9
+
+*/
